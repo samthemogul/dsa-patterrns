@@ -7,6 +7,7 @@
  */
 
 import * as foundations from './topics/foundations.js';
+import * as structures from './topics/structures.js';
 import * as arrays from './topics/arrays.js';
 import * as strings from './topics/strings.js';
 import * as bitManipulation from './topics/bit-manipulation.js';
@@ -31,6 +32,7 @@ import { enrich } from './enrichment/index.js';
 // hierarchical, then the algorithm families that build on all of them.
 const ORDER = [
   foundations,
+  structures,
   arrays,
   strings,
   bitManipulation,

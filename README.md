@@ -182,20 +182,33 @@ merged over the topic in `data/index.js`. That layer exists to retrofit content
 written before the walkthrough schema — **new topics should carry everything
 inline** in their category file, as the Hash Tables topics do.
 
-**All 57 topics are written up.** Every stage is complete:
+**All 61 topics are written up.** Every stage is complete:
 
 | Stage | | Topics |
 | --- | --- | --- |
-| 1 | Foundations | 9 / 9 |
+| 1 | Foundations | 11 / 11 |
 | 2 | Core Patterns | 9 / 9 |
-| 3 | Trees, Heaps & Graphs | 11 / 11 |
+| 3 | Trees, Heaps & Graphs | 13 / 13 |
 | 4 | Algorithm Design | 13 / 13 |
 | 5 | Weighted Graphs & Maths | 8 / 8 |
 | 6 | Advanced | 7 / 7 |
 
-338 walkthrough sections, ~48,000 words of prose, 76 worked traces,
-58 pitfall callouts, 45 SVG diagrams, and Python, C++ and TypeScript
-implementations for all 57.
+The **Data Structures** category holds four structure primers — the taxonomy
+and internals rather than the patterns. Trees covers full/complete/perfect/
+balanced, rotations, AVL vs red-black, and B-trees. Graphs covers adjacency
+list vs matrix vs edge list and the terminology. Arrays covers contiguous
+memory, amortised doubling and cache locality. Choosing a Data Structure is
+the comparison table and decision guide.
+
+Walkthrough sections carry prose, optional monospace traces and pitfall
+callouts, with SVG diagrams throughout and Python, C++ and TypeScript
+implementations for every topic.
+
+Prose supports two inline forms, rendered by `components/Walkthrough.jsx`:
+`` `code` `` and `**emphasis**`. Anything else passes through as literal
+text — there is no markdown parser, deliberately, since the prose is authored
+in this repo rather than supplied by a user. Trace blocks are *not* formatted,
+so their alignment survives.
 
 ## Illustrations
 

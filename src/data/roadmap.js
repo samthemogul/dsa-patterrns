@@ -22,6 +22,7 @@ export const stages = [
     topics: [
       "foundations-complexity",
       "foundations-recursion",
+      "structures-arrays",
       "array-searching-binary-search",
       "hash-map-basics",
       "hash-set-basics",
@@ -29,6 +30,7 @@ export const stages = [
       "queues-basics",
       "ll-traversal",
       "ll-insertion-deletion",
+      "structures-choosing",
     ],
   },
   {
@@ -60,11 +62,13 @@ export const stages = [
     detail:
       "Everything here is a variation on visiting nodes in a sensible order. Learn BFS and DFS properly — as templates you can write without thinking — and trees, grids, and graph connectivity all become the same problem wearing different clothes. Heaps join here because 'repeatedly take the smallest' is the other primitive you will reach for constantly.",
     topics: [
+      "structures-trees",
       "trees-traversal",
       "trees-bst",
       "ordered-map-set",
       "heaps-basics",
       "heaps-top-k",
+      "structures-graphs",
       "graphs-traversal-bfs",
       "graphs-traversal-dfs",
       "graphs-cycle-detection",
