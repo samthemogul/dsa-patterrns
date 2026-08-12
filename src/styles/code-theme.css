@@ -1,0 +1,14 @@
+/* Syntax theme tuned to the project palette rather than a stock highlight.js
+   stylesheet, so code sits in the same world as everything else. */
+.hljs { color: var(--ink); background: transparent; }
+.hljs-comment, .hljs-quote { color: var(--ink-faint); font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-type { color: #7a2fa8; }
+.hljs-string, .hljs-doctag, .hljs-regexp { color: var(--signal-deep); }
+.hljs-title, .hljs-title.function_, .hljs-section, .hljs-name { color: #1e4bb8; font-weight: 600; }
+.hljs-number, .hljs-symbol, .hljs-bullet { color: var(--marker); }
+.hljs-variable, .hljs-template-variable, .hljs-attr, .hljs-attribute { color: #a3364f; }
+.hljs-built_in, .hljs-builtin-name, .hljs-class .hljs-title { color: #0f6b5c; }
+.hljs-params { color: var(--ink-mid); }
+.hljs-meta { color: var(--ink-soft); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 600; }

@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Illustration shim
+   The topic `illustration` fields are raw HTML written against Tailwind
+   utility names. Rather than take a Tailwind dependency, we reimplement the
+   exact subset used (105 classes) and re-map the colour ramps onto the
+   project palette, so diagrams look native instead of stock.
+   Scoped to .illustration so nothing leaks into the app shell.
+   ========================================================================== */
+
+.illustration {
+  font-size: var(--step-0);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* Display & flexbox */
+.illustration .flex { display: flex; }
+.illustration .flex-col { flex-direction: column; }
+.illustration .items-center { align-items: center; }
+.illustration .justify-center { justify-content: center; }
+.illustration .justify-between { justify-content: space-between; }
+.illustration .justify-end { justify-content: flex-end; }
+
+/* Position */
+.illustration .relative { position: relative; }
+.illustration .absolute { position: absolute; }
+.illustration .top-0 { top: 0; }
+.illustration .top-1\/2 { top: 50%; }
+.illustration .left-1\/2 { left: 50%; }
+.illustration .left-1\/4 { left: 25%; }
+.illustration .left-12 { left: 3rem; }
+.illustration .z-0 { z-index: 0; }
+
+/* Transforms */
+.illustration .transform { transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rot, 0deg)); }
+.illustration .-translate-x-1\/2 { --tx: -50%; }
+.illustration .-translate-y-1\/2 { --ty: -50%; }
+.illustration .rotate-90 { --rot: 90deg; }
+.illustration .-rotate-45 { --rot: -45deg; }
+.illustration .rotate-90:not(.transform) { transform: rotate(90deg); }
+.illustration .-rotate-45:not(.transform) { transform: rotate(-45deg); }
+
+/* Margin */
+.illustration .mx-auto { margin-left: auto; margin-right: auto; }
+.illustration .mb-1 { margin-bottom: 0.25rem; }
+.illustration .mb-2 { margin-bottom: 0.5rem; }
+.illustration .mb-4 { margin-bottom: 1rem; }
+.illustration .mt-1 { margin-top: 0.25rem; }
+.illustration .mt-2 { margin-top: 0.5rem; }
+.illustration .mt-4 { margin-top: 1rem; }
+.illustration .my-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.illustration .my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.illustration .my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+.illustration .ml-16 { margin-left: 4rem; }
+.illustration .ml-20 { margin-left: 5rem; }
+.illustration .ml-24 { margin-left: 6rem; }
+
+/* Padding */
+.illustration .p-1 { padding: 0.25rem; }
+.illustration .p-2 { padding: 0.5rem; }
+.illustration .p-4 { padding: 1rem; }
+
+/* Gap emulation */
+.illustration .space-x-2 > * + * { margin-left: 0.5rem; }
+.illustration .space-x-4 > * + * { margin-left: 1rem; }
+
+/* Width */
+.illustration .w-0\.5 { width: 0.125rem; }
+.illustration .w-10 { width: 2.5rem; }
+.illustration .w-12 { width: 3rem; }
+.illustration .w-16 { width: 4rem; }
+.illustration .w-20 { width: 5rem; }
+.illustration .w-24 { width: 6rem; }
+.illustration .w-28 { width: 7rem; }
+.illustration .w-32 { width: 8rem; }
+.illustration .w-48 { width: 12rem; }
+.illustration .w-full { width: 100%; }
+.illustration .w-1\/2 { width: 50%; }
+.illustration .w-1\/3 { width: 33.333333%; }
+
+/* Height */
+.illustration .h-6 { height: 1.5rem; }
+.illustration .h-8 { height: 2rem; }
+.illustration .h-10 { height: 2.5rem; }
+.illustration .h-12 { height: 3rem; }
+.illustration .h-24 { height: 6rem; }
+.illustration .h-32 { height: 8rem; }
+.illustration .h-full { height: 100%; }
+
+/* Radius */
+.illustration .rounded-sm { border-radius: 2px; }
+.illustration .rounded-md { border-radius: 3px; }
+.illustration .rounded-lg { border-radius: 5px; }
+.illustration .rounded-full { border-radius: 9999px; }
+
+/* Borders */
+.illustration .border { border: 1px solid var(--rule); }
+.illustration .border-2 { border: 2px solid var(--rule); }
+.illustration .border-4 { border: 4px solid var(--rule); }
+.illustration .border-l-4 { border-left: 4px solid var(--rule); }
+.illustration .border-x-2 { border-left: 2px solid var(--rule); border-right: 2px solid var(--rule); }
+
+.illustration .border-gray-400 { border-color: var(--ink-faint); }
+.illustration .border-blue-300 { border-color: var(--signal-edge); }
+.illustration .border-blue-400,
+.illustration .border-blue-500 { border-color: var(--signal); }
+.illustration .border-green-300 { border-color: #a8cfb7; }
+.illustration .border-green-400,
+.illustration .border-green-500 { border-color: var(--easy); }
+.illustration .border-red-500 { border-color: var(--hard); }
+
+/* Backgrounds — blues map to the instrument teal ramp */
+.illustration .bg-gray-100 { background-color: var(--panel-sunk); }
+.illustration .bg-gray-200 { background-color: #e4e9ee; }
+.illustration .bg-gray-400 { background-color: var(--ink-faint); }
+.illustration .bg-blue-100 { background-color: var(--signal-tint); }
+.illustration .bg-blue-200 { background-color: #cbe4e6; }
+.illustration .bg-blue-300 { background-color: #a9d2d5; }
+.illustration .bg-blue-500 { background-color: var(--signal); }
+.illustration .bg-green-100 { background-color: var(--easy-tint); }
+.illustration .bg-green-200 { background-color: #cfe8d8; }
+.illustration .bg-red-200 { background-color: #f4d2d2; }
+.illustration .bg-red-500 { background-color: var(--hard); }
+.illustration .bg-opacity-70 { opacity: 0.7; }
+
+/* Text colour */
+.illustration .text-white { color: #fff; }
+.illustration .text-gray-400 { color: var(--ink-faint); }
+.illustration .text-gray-500 { color: var(--ink-soft); }
+.illustration .text-gray-600 { color: var(--ink-mid); }
+.illustration .text-blue-500 { color: var(--signal); }
+.illustration .text-blue-800 { color: var(--signal-deep); }
+.illustration .text-green-500,
+.illustration .text-green-700 { color: var(--easy); }
+.illustration .text-red-500 { color: var(--hard); }
+
+/* Text size */
+.illustration .text-sm { font-size: 0.8125rem; }
+.illustration .text-md { font-size: 0.9375rem; }
+.illustration .text-lg { font-size: 1.0625rem; }
+.illustration .text-xl { font-size: 1.1875rem; }
+.illustration .text-2xl { font-size: 1.4375rem; }
+.illustration .text-3xl { font-size: 1.75rem; }
+.illustration .text-4xl { font-size: 2.125rem; }
+
+/* Type treatment */
+.illustration .text-center { text-align: center; }
+.illustration .font-bold { font-weight: 600; }
+.illustration .font-mono { font-family: var(--font-mono); font-variant-ligatures: none; }
+.illustration .line-through { text-decoration: line-through; }
+
+
+/* --------------------------------------------------------------------------
+   SVG diagrams
+   Newer illustrations are inline SVG rather than boxes of text, because a
+   diagram should show the mechanism rather than restate it. They are authored
+   against these classes so colour lives here, not in 50 hard-coded fills.
+   -------------------------------------------------------------------------- */
+
+.illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  overflow: visible;
+  font-family: var(--font-mono);
+}
+
+.illustration svg text {
+  font-size: 12px;
+  fill: var(--ink);
+}
+
+/* Cell fills */
+.dg-cell      { fill: var(--panel); stroke: var(--rule); stroke-width: 1; }
+.dg-cell-idle { fill: var(--panel-sunk); stroke: var(--rule); stroke-width: 1; }
+.dg-cell-live { fill: var(--signal-tint); stroke: var(--signal-edge); stroke-width: 1.5; }
+.dg-cell-hit  { fill: #cfe8d8; stroke: var(--easy); stroke-width: 1.5; }
+.dg-cell-out  { fill: #f4d2d2; stroke: var(--hard); stroke-width: 1.5; }
+.dg-cell-mark { fill: var(--marker-tint); stroke: var(--marker); stroke-width: 1.5; }
+
+/* Lines and connectors */
+.dg-line    { stroke: var(--rule); stroke-width: 1; fill: none; }
+.dg-link    { stroke: var(--ink-mid); stroke-width: 1.5; fill: none; }
+.dg-link-hi { stroke: var(--signal); stroke-width: 2; fill: none; }
+.dg-link-cut{ stroke: var(--hard); stroke-width: 1.5; fill: none; stroke-dasharray: 3 3; }
+.dg-guide   { stroke: var(--rule); stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+
+/* Text roles */
+.dg-label { fill: var(--ink-soft); font-size: 11px; }
+.dg-index { fill: var(--ink-faint); font-size: 10px; }
+.dg-note  { fill: var(--ink-mid); font-size: 11px; }
+.dg-ptr   { fill: var(--marker); font-size: 11px; font-weight: 600; }
+.dg-ptr2  { fill: var(--signal); font-size: 11px; font-weight: 600; }
+.dg-good  { fill: var(--easy); font-size: 11px; font-weight: 600; }
+.dg-bad   { fill: var(--hard); font-size: 11px; font-weight: 600; }
+.dg-title { fill: var(--ink); font-size: 12px; font-weight: 600; }
+
+.dg-arrow { fill: var(--ink-mid); }
+.dg-arrow-hi { fill: var(--signal); }
+.dg-arrow-mark { fill: var(--marker); }

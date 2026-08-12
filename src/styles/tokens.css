@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Design tokens — "Instrument bench"
+   Cool calibrated paper, deep navy ink, instrument teal signal, amber marker.
+   Type: IBM Plex family (drawn for technical documentation).
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --paper: #edf0f4;
+  --panel: #ffffff;
+  --panel-sunk: #f5f7f9;
+  --panel-deep: #0e1a28;
+
+  /* Ink */
+  --ink: #0e1a28;
+  --ink-mid: #43546b;
+  --ink-soft: #6b7c92;
+  --ink-faint: #97a5b6;
+  --ink-invert: #eef2f6;
+
+  /* Structure */
+  --rule: #d2dae3;
+  --rule-soft: #e3e9ef;
+
+  /* Signal — instrument teal */
+  --signal: #0b6e75;
+  --signal-deep: #084d52;
+  --signal-tint: #e2f0f1;
+  --signal-edge: #9cc9cc;
+
+  /* Marker — burnt amber, used only on the complexity ruler */
+  --marker: #b4530a;
+  --marker-tint: #fbeee2;
+
+  /* Difficulty */
+  --easy: #15803d;
+  --easy-tint: #e7f4ec;
+  --medium: #a16207;
+  --medium-tint: #fbf1de;
+  --hard: #b91c1c;
+  --hard-tint: #fbe9e9;
+
+  /* Type */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-cond: 'IBM Plex Sans Condensed', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Scale */
+  --step--1: 0.8125rem;
+  --step-0: 0.9375rem;
+  --step-1: 1.0625rem;
+  --step-2: 1.375rem;
+  --step-3: 1.75rem;
+  --step-4: 2.25rem;
+
+  /* Space */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+
+  --radius: 3px;
+  --radius-lg: 5px;
+
+  --rail-width: 310px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.011em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--signal);
+  text-decoration-color: var(--signal-edge);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* The eyebrow: condensed, tracked-out label. Used to name a *kind* of thing,
+   never for decoration. */
+.eyebrow {
+  font-family: var(--font-cond);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
