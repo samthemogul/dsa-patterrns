@@ -755,8 +755,10 @@
   .topbar {
     display: flex;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 40;
     height: 52px;
     padding: 0 var(--s4);
@@ -811,7 +813,7 @@
     pointer-events: auto;
   }
 
-  .main { padding: var(--s5) var(--s4) var(--s7); }
+  .main { padding: calc(52px + var(--s4)) var(--s4) var(--s7); }
   .topic__title, .welcome__title { font-size: var(--step-2); }
   .topic__summary { font-size: var(--step-0); }
   .nav__cat { min-height: 44px; }
@@ -825,13 +827,23 @@
 
 /* Narrow phones: tighten and stack side-by-side grids. */
 @media (max-width: 520px) {
-  .main { padding: var(--s4) var(--s3) var(--s6); }
+  .main { padding: calc(52px + var(--s3)) var(--s3) var(--s6); }
   .stats { grid-template-columns: 1fr 1fr; }
   .ruler__top { flex-direction: column; gap: var(--s2); align-items: flex-start; }
   .pager { grid-template-columns: 1fr; gap: var(--s3); }
 }
 
 /* --- Wide content must never force horizontal page scroll ---------------- */
+
+/* The reading column and its cards must be allowed to shrink below their
+   content's intrinsic width (grid/flex children default to min-width:auto,
+   which is what lets wide content push the whole layout sideways). */
+.wrap,
+.section,
+.card,
+.walk__body {
+  min-width: 0;
+}
 
 .illustration svg {
   display: block;
@@ -840,20 +852,7 @@
   max-width: 100%;
 }
 
-/* Dense diagrams get a readable minimum width and scroll inside their card
-   on phones, rather than shrinking their text to illegibility. */
-@media (max-width: 640px) {
-  .illustration {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .illustration svg {
-    width: auto;
-    min-width: 560px;
-  }
-}
-
-/* Code, traces, and tables scroll internally, not the whole page. */
+/* Code, traces, and tables scroll inside their own box, not the page. */
 .walk__trace,
 .code pre,
 .card pre,
@@ -871,13 +870,25 @@ table {
 }
 
 .prose,
-.problem,
-.walk__body {
+.problem {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-html, body { overflow-x: hidden; }
+/* On phones, dense diagrams keep a readable minimum width and scroll inside
+   their card rather than shrinking their labels to illegibility. */
+@media (max-width: 640px) {
+  .illustration {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .illustration svg {
+    width: auto;
+    min-width: 560px;
+  }
+}
+/* NOTE: no `overflow-x: hidden` on html/body — it silently breaks
+   position: sticky on the desktop sidebar. */
 
 /* --- Home link in the rail --------------------------------------------- */
 
